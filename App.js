@@ -1,30 +1,23 @@
 
-// creating nested element.
-/**
- * <div id="parent">
- *  <div id="child1">
- *      <h1>This is h1 tag inside child div</h1>
- *      <h2>This is h2 tag inside child div and syblling of h1 of child 1</h2>
- *  </div>
- * <div id="child2">
- *      <h1>This is h1 tag inside child2 div</h1>
- *      <h2>This is h2 tag inside child2 div and syblling of h1 of child 2</h2>
- *  </div>
- * </div>
- * 
- * 
- * 
- * 
- * 
- */
+import React from "react";
+import ReactDOM from "react-dom"
 
-const parent = React.createElement("div",{id:"parent"},[React.createElement("div",{id:"child1"},
-[React.createElement("h1",{},"This is h1 tag inside child1 div"),React.createElement("h2",{},"This is h2 tag inside child div and syblling of h1 of child 1")]),React.createElement("div",{id:"child2"},
-[React.createElement("h1",{},"This is h1 tag inside child2 div"),React.createElement("h2",{},"This is h2 tag inside child div and syblling of h1 of child 2")])]
+const Title = () =>(
+<h1 className="head" >React using JSX</h1>
 );
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
-// {} this object is to define attributes of that tag.
 
-console.log(parent); // this is the React object, the render method is responsible to 
-// convert the React object into the h1 tag.
+
+// ?React Element
+
+
+// React Functional Component
+
+const HeadingComponent = () => <h1 className="heading" >React Functional Component</h1>
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// this only react elements can be rendered.
+// root.render(heading);
+
+// for functional component you render like thhis
+root.render(<HeadingComponent/>)
