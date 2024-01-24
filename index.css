@@ -1,3 +1,18 @@
-#heading{
-color: blue
+.header{
+    display: flex;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.nav-items ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+   
+}
+
+.nav-items  li{
+    padding: 10px;
 }
