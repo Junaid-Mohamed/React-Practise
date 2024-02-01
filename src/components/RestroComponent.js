@@ -9,19 +9,19 @@ export const RestroComponent = (props) =>{
     useEffect(()=>{
     // fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8894736&lng=77.5886234&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     // .then(res=> res.json())
-    // .then(json=> {console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0])
+    // .then(json=> {console.log(json.data.cards[4].card.card.gridElements.infoWithStyle)
     // setrestroCard(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)})
-    
+    getData()
     },[])
 
-
+// cards[4].card.card.gridElements.infoWithStyle.restaurants[0]
 
     async function getData(){
         try{
-            const cart = await axios.get("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8894736&lng=77.5886234&collection=83649&tags=layout_CCS_Biryani&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
+            const cart = await axios.get("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8894736&lng=77.5886234&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
             // console.log(data.data);
             // data.map(d=>console.log(d))
-            console.log(cart.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+            console.log(cart.data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
         }
         catch(e){
             console.log("there was error",e)
